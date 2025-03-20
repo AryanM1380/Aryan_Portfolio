@@ -1,0 +1,519 @@
+<!DOCTYPE html> 
+<html lang="en" class="scroll-smooth">
+<head> 
+    <meta charset="UTF-8"/> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+    <title>Aryan Mohammadi - Software Engineer Portfolio</title> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/> 
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet"/> 
+    <script src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script> 
+    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000" data-border-radius="small"></script> 
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .hidden {
+            display: none;
+        }
+        #menu-toggle {
+            display: none;
+        }
+        #menu-toggle i {
+            font-size: 1.5rem;
+            color: #4b5563;
+            cursor: pointer;
+        }
+        @media (max-width: 640px) {
+            nav .flex {
+                flex-direction: row;
+                align-items: center;
+            }
+            nav .sm\\:flex {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                padding: 1rem;
+                background: #fff;
+                border-top: 1px solid #e5e7eb;
+            }
+            nav .sm\\:flex.active {
+                display: flex;
+            }
+            nav .sm\\:space-x-8 {
+                space-x: 0;
+            }
+            nav a, nav button {
+                padding: 0.5rem 0;
+                width: 100%;
+                text-align: left;
+            }
+            #menu-toggle {
+                display: block;
+                background: none;
+                border: none;
+                padding: 0;
+            }
+            .flex.items-center {
+                width: auto;
+                justify-content: space-between;
+            }
+            #contact-button {
+                display: none;
+            }
+            #contact-button-mobile {
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+            .lg\\:flex { flex-direction: column; }
+            .lg\\:w-1\\/2 { width: 100%; }
+            .text-4xl { font-size: 1.875rem; }
+            .text-xl { font-size: 1rem; }
+            .mt-8.lg\\:mt-0 { margin-top: 2rem; }
+            .lg\\:grid-cols-4 { grid-template-columns: 1fr; }
+            .lg\\:grid-cols-3 { grid-template-columns: 1fr; }
+            .flex.flex-nowrap { flex-direction: column; overflow-x: hidden; }
+            .p-6.flex-shrink-0 { padding: 1rem; width: 100%; }
+            .max-w-sm { max-width: 100%; }
+            .grid-cols-1 { padding-left: 0; }
+            .ml-3 { margin-left: 0; }
+            .absolute.-left-9 { left: -1.5rem; }
+            .w-1\\/2 { width: 100%; padding-left: 2rem; padding-right: 0; }
+            .absolute.left-1\\/2 { left: 1rem; transform: none; }
+            .ml-auto, .mr-auto { margin-left: 0; margin-right: 0; }
+            #contact-options .w-80 { width: 90%; max-height: 80vh; overflow-y: auto; }
+            #contact-options h2 { font-size: 1.25rem; }
+            .space-y-4 > a, .space-y-4 > button { padding: 0.75rem; font-size: 0.875rem; }
+        }
+        @media (min-width: 641px) {
+            #contact-button-mobile {
+                display: none;
+            }
+            #contact-button {
+                display: block;
+            }
+        }
+    </style>
+</head>  
+<body class="bg-gray-50 font-[Inter]"> 
+    <nav class="bg-white shadow-sm sticky top-0 z-10"> 
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"> 
+            <div class="flex justify-between h-16"> 
+                <div class="flex"> 
+                    <div class="flex-shrink-0 flex items-center"> 
+                        <img class="h-8 w-8 rounded-full" src="./assets/logo.jpg" alt="Logo"/>
+                    </div>  
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8"> 
+                        <a id="about-tab" href="#About-Me" class="border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"> 
+                            About Me
+                        </a>  
+                        <a id="skills-tab" href="#skills" class="border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"> 
+                            Skills
+                        </a>
+                        <a id="projects-tab" href="#featured-projects" class="border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"> 
+                            Projects
+                        </a> 
+                        <a id="languages-tab" href="#languages" class="border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"> 
+                            Languages
+                        </a> 
+                        <a id="education-tab" href="#education" class="border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"> 
+                            Education
+                        </a>  
+                        <a id="experience-tab" href="#work" class="border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"> 
+                            Work_Experience
+                        </a>  
+                        <button id="contact-button" class="bg-custom text-white !rounded-button px-4 py-2 text-sm font-medium hover:bg-indigo-700">
+                            Contact Me
+                        </button>
+                    </div>  
+                </div>  
+                <div class="flex items-center">
+                    <button id="menu-toggle" class="sm:hidden">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>  
+            <div class="sm:hidden sm:ml-6 sm:flex sm:space-x-8">
+                <a id="about-tab-mobile" href="#About-Me" class="border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"> 
+                    About Me
+                </a>  
+                <a id="skills-tab-mobile" href="#skills" class="border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"> 
+                    Skills
+                </a>
+                <a id="projects-tab-mobile" href="#featured-projects" class="border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"> 
+                    Projects
+                </a> 
+                <a id="languages-tab-mobile" href="#languages" class="border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"> 
+                    Languages
+                </a> 
+                <a id="education-tab-mobile" href="#education" class="border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"> 
+                    Education
+                </a>  
+                <a id="experience-tab-mobile" href="#work" class="border-transparent text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"> 
+                    Work_Experience
+                </a>  
+                <button id="contact-button-mobile" class="bg-custom text-white !rounded-button px-4 py-2 text-sm font-medium hover:bg-indigo-700">
+                    Contact Me
+                </button>
+            </div>
+        </div>  
+    </nav>
+
+    <div id="contact-options" class="hidden fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center z-20">
+        <div class="bg-white p-6 rounded-lg w-80">
+            <h2 class="text-xl font-semibold mb-4">Contact Options</h2>
+            <div class="space-y-4">
+                <a href="tel:+358415707884" class="block w-full bg-green-500 text-white py-2 rounded text-center hover:bg-green-600">
+                    Call Me
+                </a>
+                <a href="mailto:aryanm.work@gmail.com?subject=Contact%20from%20Portfolio" class="block w-full bg-blue-500 text-white py-2 rounded text-center hover:bg-blue-600">
+                    Email Me
+                </a>
+                <a href="https://wa.me/358415707884" target="_blank" class="block w-full bg-teal-500 text-white py-2 rounded text-center hover:bg-teal-600">
+                    Message on WhatsApp
+                </a>
+            </div>
+            <button id="close-options" class="mt-4 w-full bg-red-500 text-white py-2 rounded hover:bg-red-600">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <main class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-12 about-section" id="About-Me"> 
+        <div class="lg:flex lg:items-center lg:justify-between"> 
+            <div class="lg:w-1/2"> 
+                <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl"> 
+                    Hi, I'm Aryan Mohammadi
+                </h1>  
+                <p class="mt-3 text-xl text-gray-500"> 
+                    Junior Software Developer specializing in Full-Stack Development with 2+ years of experience building scalable mobile applications and dynamic websites, along with data analytics solutions.
+                </p>  
+                <div class="mt-8 flex gap-4"> 
+                    <a href="./assets/cv.pdf" download="Aryan_Mohammadi_CV.pdf">
+                        <button class="bg-custom text-white !rounded-button px-6 py-3 text-base font-medium hover:bg-indigo-700"> 
+                            Download Resume
+                        </button>
+                    </a>
+                </div>  
+            </div>  
+            <div class="mt-8 lg:mt-0 lg:w-1/2"> 
+                <img class="rounded-lg object-cover" src="./assets/me.png" alt="Profile Photo"/> 
+            </div>  
+        </div>  
+        <div class="mt-20 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"> 
+            <div class="bg-white p-6 rounded-lg shadow-sm"> 
+                <div class="text-4xl font-bold text-custom">23</div> 
+                <div class="mt-2 text-sm text-gray-500">Age</div> 
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm"> 
+                <div class="text-4xl font-bold text-custom">2+</div> 
+                <div class="mt-2 text-sm text-gray-500">Years Experience</div> 
+            </div>  
+            <div class="bg-white p-6 rounded-lg shadow-sm"> 
+                <div class="text-4xl font-bold text-custom">5+</div> 
+                <div class="mt-2 text-sm text-gray-500">Projects Completed</div> 
+            </div>  
+            <div class="bg-white p-6 rounded-lg shadow-sm"> 
+                <div class="text-4xl font-bold text-custom">15+</div> 
+                <div class="mt-2 text-sm text-gray-500">Technologies Mastered</div> 
+            </div>  
+        </div>  
+        <br id="skills">
+        <div class="mt-20"> 
+            <h2 class="text-2xl font-bold text-gray-900">Featured Skills</h2> 
+        </div>  
+        <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"> 
+            <div class="bg-white p-6 rounded-lg shadow-sm"> 
+                <h3 class="text-xl font-bold mb-4">Frontend Development</h3> 
+                <p class="text-gray-600">React, React Native, HTML, CSS, JavaScript, Bootstrap, TypeScript, Responsive Design</p> 
+            </div>  
+            <div class="bg-white p-6 rounded-lg shadow-sm"> 
+                <h3 class="text-xl font-bold mb-4">Backend Development</h3> 
+                <p class="text-gray-600">Node js, Django, Next js, Express, REST APIs, Authentication, PHP</p> 
+            </div>  
+            <div class="bg-white p-6 rounded-lg shadow-sm"> 
+                <h3 class="text-xl font-bold mb-4">Programming Languages</h3> 
+                <p class="text-gray-600">Python, C++, Java, JavaScript, TypeScript, PHP, SQL, R</p> 
+            </div>  
+            <div class="bg-white p-6 rounded-lg shadow-sm"> 
+                <h3 class="text-xl font-bold mb-4">Database</h3> 
+                <p class="text-gray-600">MySQL, MongoDB, Microsoft SQL Server, SQLite </p> 
+            </div>  
+            <div class="bg-white p-6 rounded-lg shadow-sm"> 
+                <h3 class="text-xl font-bold mb-4">Data Science</h3> 
+                <p class="text-gray-600">Python, Pandas, NumPy, Matplotlib, Seaborn, SciPy, Scikit-learn, TensorFlow, Power BI</p> 
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm"> 
+                <h3 class="text-xl font-bold mb-4">Others</h3> 
+                <p class="text-gray-600">Scrum, Kanban, Jira, Trello, confluence, Git, GitHub, GitLab, Natural Language Processing (NLP), Docker</p> 
+            </div>  
+        </div>  
+        <br id="featured-projects">
+        <div class="mt-20" id="featured-projects"> 
+            <h2 class="text-2xl font-bold text-gray-900">Featured Projects</h2> 
+            <div class="mt-6 flex flex-nowrap overflow-x-auto gap-8"> 
+                <div class="p-6 flex-shrink-0"> 
+                    <div class="p-6 bg-white border border-gray-300 rounded-lg shadow-sm max-w-sm">
+                        <h3 class="text-lg font-medium text-gray-900">Featured Project</h3>
+                        <p class="mt-2 text-sm text-gray-500">Built a full-stack e-commerce platform using React, Node.js, and MongoDB.</p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">React.js</span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">Node.js</span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">MongoDB</span>
+                        </div>
+                        <div class="mt-4">
+                            <button class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm hover:bg-indigo-700 transition w-full">
+                                <i class="fab fa-github mr-2"></i>View on GitHub
+                            </button>
+                        </div>
+                    </div>
+                </div>  
+                <div class="p-6 flex-shrink-0"> 
+                    <div class="p-6 bg-white border border-gray-300 rounded-lg shadow-sm max-w-sm">
+                        <h3 class="text-lg font-medium text-gray-900">Featured Project</h3>
+                        <p class="mt-2 text-sm text-gray-500">Built a full-stack e-commerce platform using React, Node.js, and MongoDB.</p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">React.js</span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">Node.js</span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">MongoDB</span>
+                        </div>
+                        <div class="mt-4">
+                            <button class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm hover:bg-indigo-700 transition w-full">
+                                <i class="fab fa-github mr-2"></i>View on GitHub
+                            </button>
+                        </div>
+                    </div>
+                </div>  
+                <div class="p-6 flex-shrink-0"> 
+                    <div class="p-6 bg-white border border-gray-300 rounded-lg shadow-sm max-w-sm">
+                        <h3 class="text-lg font-medium text-gray-900">Featured Project</h3>
+                        <p class="mt-2 text-sm text-gray-500">Built a full-stack e-commerce platform using React, Node.js, and MongoDB.</p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">React.js</span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">Node.js</span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">MongoDB</span>
+                        </div>
+                        <div class="mt-4">
+                            <button class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm hover:bg-indigo-700 transition w-full">
+                                <i class="fab fa-github mr-2"></i>View on GitHub
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 flex-shrink-0"> 
+                    <div class="p-6 bg-white border border-gray-300 rounded-lg shadow-sm max-w-sm">
+                        <h3 class="text-lg font-medium text-gray-900">Featured Project</h3>
+                        <p class="mt-2 text-sm text-gray-500">Built a full-stack e-commerce platform using React, Node.js, and MongoDB.</p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">React.js</span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">Node.js</span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">MongoDB</span>
+                        </div>
+                        <div class="mt-4">
+                            <button class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm hover:bg-indigo-700 transition w-full">
+                                <i class="fab fa-github mr-2"></i>View on GitHub
+                            </button>
+                        </div>
+                    </div>
+                </div>  
+            </div>  
+        </div>
+        <div class="mt-20">
+            <br id="languages"> 
+            <div class="mt-20"> 
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Languages</h2> 
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"> 
+                    <div class="bg-white p-6 rounded-lg shadow-sm"> 
+                        <h3 class="text-lg font-bold mb-2">Persian</h3> 
+                        <p class="text-gray-600">Native</p> 
+                    </div>  
+                    <div class="bg-white p-6 rounded-lg shadow-sm"> 
+                        <h3 class="text-lg font-bold mb-2">English</h3> 
+                        <p class="text-gray-600">Fluent</p> 
+                    </div>  
+                    <div class="bg-white p-6 rounded-lg shadow-sm"> 
+                        <h3 class="text-lg font-bold mb-2">German</h3> 
+                        <p class="text-gray-600">Intermediate</p> 
+                    </div>  
+                    <div class="bg-white p-6 rounded-lg shadow-sm"> 
+                        <h3 class="text-lg font-bold mb-2">Finnish</h3> 
+                        <p class="text-gray-600">Basic</p> 
+                    </div>  
+                </div>  
+            </div>  
+            <br id="education">
+            <div class="mt-20" style="margin-left: 15px;"> 
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Education</h2> 
+                <div class="grid grid-cols-1 gap-6 relative border-l-2 border-gray-200 ml-3"> 
+                    <div class="bg-white p-6 rounded-lg shadow-sm"> 
+                        <span class="absolute flex items-center justify-center w-6 h-6 bg-custom rounded-full -left-9"></span> 
+                        <h3 class="text-lg font-bold">Math and Physics</h3> 
+                        <p class="text-gray-600">Salamat High School Iran</p> 
+                        <p class="text-gray-600">Iran</p> 
+                        <p class="text-gray-500">2017 - 2020</p> 
+                    </div>  
+                    <div class="bg-white p-6 rounded-lg shadow-sm"> 
+                        <span class="absolute flex items-center justify-center w-6 h-6 bg-custom rounded-full -left-9"></span> 
+                        <h3 class="text-lg font-bold">German Language Studies</h3> 
+                        <p class="text-gray-600">Fachhochschule Burgenland </p>
+                        <p class="text-gray-600">Austria</p>  
+                        <p class="text-gray-500">2020 - 2021</p> 
+                    </div>  
+                    <div class="bg-white p-6 rounded-lg shadow-sm"> 
+                        <span class="absolute flex items-center justify-center w-6 h-6 bg-custom rounded-full -left-9"></span> 
+                        <h3 class="text-lg font-bold">Bachelor in Computer Application</h3> 
+                        <p class="text-gray-600">Häme University of Applied Sciences  </p>
+                        <p class="text-gray-600">Finland</p>  
+                        <p class="text-gray-500">2022 - 2025</p> 
+                    </div>  
+                </div>  
+            </div>
+            <br id="work">
+            <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="text-center mb-16"> 
+                    <h1 class="text-4xl font-bold text-gray-900 mb-4">Work Experience</h1>
+                </div>
+                <div class="relative">            
+                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200"></div>
+                    <div class="space-y-16">                
+                        <div class="relative">
+                            <div class="absolute left-1/2 transform -translate-x-1/2 -mt-2">
+                                <div class="w-4 h-4 rounded-full bg-custom border-4 border-white"></div>
+                            </div>
+                            <div class="ml-auto w-1/2 pl-8">
+                                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-300">                            
+                                    <div class="flex items-center justify-between mb-4">
+                                        <div>
+                                            <h3 class="text-xl font-semibold text-gray-900">Data Analyst </h3>
+                                            <p class="text-custom font-medium">Lightning Chart ® </p>
+                                        </div>                                
+                                        <img src="./assets/LightingChart.webp" alt="LightingChart" class="w-12 h-12 object-contain">                            
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-500 mb-4">                                
+                                        <i class="far fa-calendar-alt mr-2"></i>
+                                        <span>May 2024 - Aug 2024</span>                                
+                                        <i class="fas fa-map-marker-alt ml-4 mr-2"></i>
+                                        <span>Finland. Remote</span>                            
+                                    </div>
+                                    <ul class="space-y-2 mb-4 text-gray-600">
+                                        <li class="flex items-start">                                    
+                                            <i class="fas fa-check-circle text-custom mt-1 mr-2"></i>
+                                            <span>Conducted DVP testing and created demo dashboards to enhance client engagement.</span>
+                                        </li>
+                                        <li class="flex items-start">                                    
+                                            <i class="fas fa-check-circle text-custom mt-1 mr-2"></i>
+                                            <span>Performed data analytics to optimize performance and provide actionable insights.</span>
+                                        </li>
+                                        <li class="flex items-start">                                    
+                                            <i class="fas fa-check-circle text-custom mt-1 mr-2"></i>
+                                            <span>Ensured reliability and functionality of visualization tools, contributing to project success.</span>
+                                        </li>
+                                    </ul>                            
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">Python</span>
+                                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">RStudio</span>                                
+                                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">PowerBI</span>
+                                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">Excel</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                        <div class="relative">
+                            <div class="absolute left-1/2 transform -translate-x-1/2 -mt-2">
+                                <div class="w-4 h-4 rounded-full bg-custom border-4 border-white"></div>
+                            </div>
+                            <div class="mr-auto w-1/2 pr-8">
+                                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-300">                            
+                                    <div class="flex items-center justify-between mb-4">
+                                        <div>
+                                            <h3 class="text-xl font-semibold text-gray-900">Web Developer</h3>
+                                            <p class="text-custom font-medium">Bovi</p>
+                                        </div>                                
+                                        <img src="./assets/bovi.png" alt="bovi" class="w-12 h-12 object-contain">                            
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-500 mb-4">                                
+                                        <i class="far fa-calendar-alt mr-2"></i>
+                                        <span>Feb 2024 - Apr 2024</span>                                
+                                        <i class="fas fa-map-marker-alt ml-4 mr-2"></i>
+                                        <span>Finland. Remote</span>                            
+                                    </div>
+                                    <ul class="space-y-2 mb-4 text-gray-600">
+                                        <li class="flex items-start">                                    
+                                            <i class="fas fa-check-circle text-custom mt-1 mr-2"></i>
+                                            <span>Designed and developed custom websites for the hospitality industry using WordPress and PHP.</span>
+                                        </li>
+                                        <li class="flex items-start">                                    
+                                            <i class="fas fa-check-circle text-custom mt-1 mr-2"></i>
+                                            <span>Strengthened client brand identity through effective digital campaigns.</span>
+                                        </li>
+                                        <li class="flex items-start">                                    
+                                            <i class="fas fa-check-circle text-custom mt-1 mr-2"></i>
+                                            <span>Delivered user-friendly web solutions, increasing client engagement and improving online visibility.</span>
+                                        </li>
+                                        <li class="flex items-start">                                    
+                                            <i class="fas fa-check-circle text-custom mt-1 mr-2"></i>
+                                            <span>Successfully launched a new website for the client <br><a href="https://bovi.fi/en/">Bovi.fi</a> </span>
+                                        </li>
+                                    </ul>                            
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">WordPress</span>
+                                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">PHP</span>                                
+                                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">SQL</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </main> 
+
+    <script>
+        const navLinks = document.querySelectorAll('nav a:not([id$="-mobile"])');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.forEach(tab => {
+                    tab.classList.remove('border-custom', 'text-custom');
+                    tab.classList.add('border-transparent', 'text-gray-500');
+                });
+                this.classList.remove('border-transparent', 'text-gray-500');
+                this.classList.add('border-custom', 'text-custom');
+            });
+        });
+
+        const mobileNavLinks = document.querySelectorAll('nav a[id$="-mobile"]');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileNavLinks.forEach(tab => {
+                    tab.classList.remove('border-custom', 'text-custom');
+                    tab.classList.add('border-transparent', 'text-gray-500');
+                });
+                this.classList.remove('border-transparent', 'text-gray-500');
+                this.classList.add('border-custom', 'text-custom');
+            });
+        });
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.querySelector('nav .sm\\:hidden.sm\\:ml-6.sm\\:flex.sm\\:space-x-8');
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        const contactButton = document.getElementById('contact-button');
+        const contactButtonMobile = document.getElementById('contact-button-mobile');
+        const contactOptions = document.getElementById('contact-options');
+        const closeOptions = document.getElementById('close-options');
+        contactButton.addEventListener('click', () => {
+            contactOptions.classList.remove('hidden');
+        });
+        contactButtonMobile.addEventListener('click', () => {
+            contactOptions.classList.remove('hidden');
+        });
+        closeOptions.addEventListener('click', () => {
+            contactOptions.classList.add('hidden');
+        });
+    </script>
+</body>  
+</html>
